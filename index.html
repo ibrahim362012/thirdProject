@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Checker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #343a40;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .result div {
+            margin-bottom: 20px;
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .result h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #28a745;
+        }
+
+        .result p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .no-match {
+            font-size: 16px;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Symptom Checker</h1>
+        <div class="form-group">
+            <label for="symptoms">Enter your symptoms (comma separated):</label>
+            <input type="text" id="symptoms" placeholder="e.g. runny nose, sore throat, cough">
+        </div>
+        <button onclick="checkSymptoms()">Check</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const diseases = {
+            "Common Cold": {
+                symptoms: ["runny nose", "sore throat", "cough", "congestion", "slight body aches", "sneezing"],
+                treatment: ["decongestants", "antihistamines", "cough suppressants", "pain relievers", "rest", "hydration"]
+            },
+            "Flu": {
+                symptoms: ["fever", "chills", "muscle aches", "cough", "congestion", "runny nose", "fatigue"],
+                treatment: ["antiviral medications", "pain relievers", "rest", "hydration"]
+            },
+            "COVID-19": {
+                symptoms: ["fever", "dry cough", "tiredness", "loss of taste or smell", "difficulty breathing", "chest pain"],
+                treatment: ["rest", "hydration", "pain relievers", "fever reducers", "medical attention if severe"]
+            },
+            "Strep Throat": {
+                symptoms: ["sore throat", "painful swallowing", "red and swollen tonsils", "fever", "headache", "rash"],
+                treatment: ["antibiotics", "pain relievers", "rest", "hydration"]
+            }
+        };
+
+        function checkSymptoms() {
+            const input = document.getElementById('symptoms').value;
+            const symptoms = input.split(',').map(symptom => symptom.trim().toLowerCase());
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+
+            let found = false;
+
+            for (const [disease, info] of Object.entries(diseases)) {
+                const matchedSymptoms = info.symptoms.filter(symptom => symptoms.includes(symptom));
+                if (matchedSymptoms.length > 0) {
+                    found = true;
+                    const diseaseElement = document.createElement('div');
+                    diseaseElement.innerHTML = `<h3>${disease}</h3><p>Possible symptoms: ${matchedSymptoms.join(', ')}</p><p>Treatments: ${info.treatment.join(', ')}</p>`;
+                    resultDiv.appendChild(diseaseElement);
+                }
+            }
+
+            if (!found) {
+                resultDiv.innerHTML = '<p class="no-match">No matching diseases found. Please consult a doctor for a proper diagnosis.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

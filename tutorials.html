@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Tutorials</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #282c34;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .tutorial {
+            width: 90%;
+            max-width: 1200px;
+            background: #f9f9f9;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tutorial h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .lesson {
+            background: #fff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .lesson:hover {
+            background-color: #e0f7fa;
+        }
+
+        .lesson-content {
+            width: 90%;
+            max-width: 1200px;
+            background: #f9f9f9;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code Tutorials</h1>
+    </header>
+    <main>
+        <section class="tutorial">
+            <h2>Tutorial 1: HTML Basics</h2>
+            <div class="lesson" onclick="showLessonContent('html1')">Lesson 1: Introduction to HTML</div>
+            <div class="lesson" onclick="showLessonContent('html2')">Lesson 2: HTML Tags</div>
+            <div class="lesson" onclick="showLessonContent('html3')">Lesson 3: Creating Links</div>
+            <div class="lesson" onclick="showLessonContent('html4')">Lesson 4: Adding Images</div>
+            <div class="lesson" onclick="showLessonContent('html5')">Lesson 5: Lists</div>
+            <div class="lesson" onclick="showLessonContent('html6')">Lesson 6: Tables</div>
+            <div class="lesson" onclick="showLessonContent('html7')">Lesson 7: Forms</div>
+            <div class="lesson" onclick="showLessonContent('html8')">Lesson 8: Semantic HTML</div>
+            <div class="lesson" onclick="showLessonContent('html9')">Lesson 9: Audio and Video</div>
+            <div class="lesson" onclick="showLessonContent('html10')">Lesson 10: HTML Best Practices</div>
+        </section>
+        <section class="tutorial">
+            <h2>Tutorial 2: CSS Basics</h2>
+            <div class="lesson" onclick="showLessonContent('css1')">Lesson 1: Introduction to CSS</div>
+            <div class="lesson" onclick="showLessonContent('css2')">Lesson 2: CSS Selectors</div>
+            <div class="lesson" onclick="showLessonContent('css3')">Lesson 3: Styling Text</div>
+            <div class="lesson" onclick="showLessonContent('css4')">Lesson 4: Box Model</div>
+            <div class="lesson" onclick="showLessonContent('css5')">Lesson 5: Flexbox</div>
+            <div class="lesson" onclick="showLessonContent('css6')">Lesson 6: Grid</div>
+            <div class="lesson" onclick="showLessonContent('css7')">Lesson 7: Responsive Design</div>
+            <div class="lesson" onclick="showLessonContent('css8')">Lesson 8: CSS Variables</div>
+            <div class="lesson" onclick="showLessonContent('css9')">Lesson 9: Transitions</div>
+            <div class="lesson" onclick="showLessonContent('css10')">Lesson 10: CSS Best Practices</div>
+        </section>
+        <section class="tutorial">
+            <h2>Tutorial 3: JavaScript Basics</h2>
+            <div class="lesson" onclick="showLessonContent('js1')">Lesson 1: Introduction to JavaScript</div>
+            <div class="lesson" onclick="showLessonContent('js2')">Lesson 2: Variables</div>
+            <div class="lesson" onclick="showLessonContent('js3')">Lesson 3: Functions</div>
+            <div class="lesson" onclick="showLessonContent('js4')">Lesson 4: Events</div>
+            <div class="lesson" onclick="showLessonContent('js5')">Lesson 5: DOM Manipulation</div>
+            <div class="lesson" onclick="showLessonContent('js6')">Lesson 6: Arrays</div>
+            <div class="lesson" onclick="showLessonContent('js7')">Lesson 7: Objects</div>
+            <div class="lesson" onclick="showLessonContent('js8')">Lesson 8: Promises</div>
+            <div class="lesson" onclick="showLessonContent('js9')">Lesson 9: Async/Await</div>
+            <div class="lesson" onclick="showLessonContent('js10')">Lesson 10: JavaScript Best Practices</div>
+        </section>
+        <section class="tutorial">
+            <h2>Tutorial 4: Python Basics</h2>
+            <div class="lesson" onclick="showLessonContent('python1')">Lesson 1: Introduction to Python</div>
+            <div class="lesson" onclick="showLessonContent('python2')">Lesson 2: Variables</div>
+            <div class="lesson" onclick="showLessonContent('python3')">Lesson 3: Functions</div>
+            <div class="lesson" onclick="showLessonContent('python4')">Lesson 4: Lists</div>
+            <div class="lesson" onclick="showLessonContent('python5')">Lesson 5: Dictionaries</div>
+            <div class="lesson" onclick="showLessonContent('python6')">Lesson 6: Loops</div>
+            <div class="lesson" onclick="showLessonContent('python7')">Lesson 7: Conditionals</div>
+            <div class="lesson" onclick="showLessonContent('python8')">Lesson 8: Modules</div>
+            <div class="lesson" onclick="showLessonContent('python9')">Lesson 9: File Handling</div>
+            <div class="lesson" onclick="showLessonContent('python10')">Lesson 10: Python Best Practices</div>
+        </section>
+        <section class="tutorial">
+            <h2>Tutorial 5: C++ Basics</h2>
+            <div class="lesson" onclick="showLessonContent('cpp1')">Lesson 1: Introduction to C++</div>
+            <div class="lesson" onclick="showLessonContent('cpp2')">Lesson 2: Variables</div>
+            <div class="lesson" onclick="showLessonContent('cpp3')">Lesson 3: Functions</div>
+            <div class="lesson" onclick="showLessonContent('cpp4')">Lesson 4: Classes and Objects</div>
+            <div class="lesson" onclick="showLessonContent('cpp5')">Lesson 5: Inheritance</div>
+            <div class="lesson" onclick="showLessonContent('cpp6')">Lesson 6: Polymorphism</div>
+            <div class="lesson" onclick="showLessonContent('cpp7')">Lesson 7: Templates</div>
+            <div class="lesson" onclick="showLessonContent('cpp8')">Lesson 8: Exception Handling</div>
+            <div class="lesson" onclick="showLessonContent('cpp9')">Lesson 9: File I/O</div>
+            <div class="lesson" onclick="showLessonContent('cpp10')">Lesson 10: C++ Best Practices</div>
+        </section>
+        <section id="lesson-content" class="lesson-content"></section>
+    </main>
+    <script>
+        function showLessonContent(lessonId) {
+            const lessonContent = {
+                html1: '<h3>HTML Lesson 1: Introduction to HTML</h3><p>HTML stands for HyperText Markup Language. It is used to create web pages and web applications. It consists of a series of elements that describe the structure and content of a webpage. </p>',
+                html2: '<h3>HTML Lesson 2: HTML Tags</h3><p>HTML tags are the building blocks of HTML. They are used to create elements such as headings, paragraphs, links, images, and more. Each tag has an opening tag and a closing tag. Examples for it; paragraph which is like this"<p> Your Text<p>"</p>',
+                html3: '<h3>HTML Lesson 3: Creating Links</h3><p>Links in HTML are created using the &lt;a&gt; tag. You can create links to other web pages, files, email addresses, and more by using the href attribute.</p>',
+                html4: '<h3>HTML Lesson 4: Adding Images</h3><p>Images in HTML are added using the &lt;img&gt; tag. The src attribute specifies the path to the image file, and the alt attribute provides alternative text for the image.</p>',
+                html5: '<h3>HTML Lesson 5: Lists</h3><p>Lists in HTML can be ordered (numbered) or unordered (bulleted). Ordered lists use the &lt;ol&gt; tag, and unordered lists use the &lt;ul&gt; tag. List items are defined using the &lt;li&gt; tag.</p>',
+                html6: '<h3>HTML Lesson 6: Tables</h3><p>Tables in HTML are created using the &lt;table&gt; tag. Tables are made up of rows (&lt;tr&gt;), and each row is divided into cells (&lt;td&gt;). Table headers are defined using the &lt;th&gt; tag.</p>',
+                html7: '<h3>HTML Lesson 7: Forms</h3><p>Forms in HTML are used to collect user input. The &lt;form&gt; tag is used to create a form, and input elements such as text fields, checkboxes, radio buttons, and submit buttons are added using the &lt;input&gt; tag.</p>',
+                html8: '<h3>HTML Lesson 8: Semantic HTML</h3><p>Semantic HTML introduces meaning to the web page rather than just presentation. Tags like &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, and &lt;section&gt; describe the structure and content of web pages.</p>',
+                html9: '<h3>HTML Lesson 9: Audio and Video</h3><p>HTML5 introduced new tags for embedding audio (&lt;audio&gt;) and video (&lt;video&gt;) content into web pages. These tags support various attributes to control playback, volume, and more.</p>',
+                html10: '<h3>HTML Lesson 10: HTML Best Practices</h3><p>Best practices for writing HTML include using semantic tags, keeping the code clean and readable, using comments, validating HTML, and ensuring accessibility.</p>',
+                css1: '<h3>CSS Lesson 1: Introduction to CSS</h3><p>CSS stands for Cascading Style Sheets. It is used to style HTML elements and control the layout of web pages. CSS can be applied inline, internally within a &lt;style&gt; tag, or externally through a linked stylesheet.</p>',
+                css2: '<h3>CSS Lesson 2: CSS Selectors</h3><p>CSS selectors are used to select the HTML elements you want to style. Common selectors include element selectors, class selectors, ID selectors, and attribute selectors.</p>',
+                css3: '<h3>CSS Lesson 3: Styling Text</h3><p>CSS allows you to style text by changing its font, size, color, alignment, spacing, and more. Properties like font-family, font-size, color, text-align, and line-height are used to style text.</p>',
+                css4: '<h3>CSS Lesson 4: Box Model</h3><p>The CSS box model describes the rectangular boxes generated for elements in the document tree. It consists of margins, borders, padding, and the actual content area. Understanding the box model is essential for layout design.</p>',
+                css5: '<h3>CSS Lesson 5: Flexbox</h3><p>Flexbox is a layout model that allows you to create complex layouts with ease. It provides a more efficient way to align and distribute space among items in a container, even when their size is unknown or dynamic.</p>',
+                css6: '<h3>CSS Lesson 6: Grid</h3><p>CSS Grid Layout is a two-dimensional layout system for the web. It lets you layout items in rows and columns, making it easier to design web pages without using floats and positioning.</p>',
+                css7: '<h3>CSS Lesson 7: Responsive Design</h3><p>Responsive design ensures that web pages look good on all devices. Media queries, flexible grid layouts, and flexible images are key components of responsive design.</p>',
+                css8: '<h3>CSS Lesson 8: CSS Variables</h3><p>CSS variables, also known as custom properties, allow you to reuse values throughout your CSS. They make it easier to manage colors, fonts, and other design elements.</p>',
+                css9: '<h3>CSS Lesson 9: Transitions</h3><p>CSS transitions allow you to change property values smoothly over a given duration. They are useful for creating animations and enhancing the user experience.</p>',
+                css10: '<h3>CSS Lesson 10: CSS Best Practices</h3><p>Best practices for writing CSS include using a consistent naming convention, organizing your styles, avoiding inline styles, and using preprocessors like SASS or LESS.</p>',
+                js1: '<h3>JavaScript Lesson 1: Introduction to JavaScript</h3><p>JavaScript is a programming language used to create dynamic and interactive effects within web browsers. It is an essential technology alongside HTML and CSS.</p>',
+                js2: '<h3>JavaScript Lesson 2: Variables</h3><p>Variables are used to store data that can be manipulated and retrieved later. JavaScript uses var, let, and const to declare variables.</p>',
+                js3: '<h3>JavaScript Lesson 3: Functions</h3><p>Functions are reusable blocks of code that perform a specific task. They can be defined using the function keyword, followed by a name, parameters, and a body.</p>',
+                js4: '<h3>JavaScript Lesson 4: Events</h3><p>Events are actions that occur in the browser, such as clicks, mouse movements, or key presses. JavaScript can handle these events to create interactive web pages.</p>',
+                js5: '<h3>JavaScript Lesson 5: DOM Manipulation</h3><p>The Document Object Model (DOM) represents the structure of a web page. JavaScript can manipulate the DOM to change the content, structure, and style of a page dynamically.</p>',
+                js6: '<h3>JavaScript Lesson 6: Arrays</h3><p>Arrays are used to store multiple values in a single variable. JavaScript arrays can hold elements of any data type and have various methods for performing operations on them.</p>',
+                js7: '<h3>JavaScript Lesson 7: Objects</h3><p>Objects are collections of key-value pairs that represent entities with properties and methods. They are fundamental to JavaScript programming.</p>',
+                js8: '<h3>JavaScript Lesson 8: Promises</h3><p>Promises are used to handle asynchronous operations in JavaScript. They represent a value that may be available now, in the future, or never.</p>',
+                js9: '<h3>JavaScript Lesson 9: Async/Await</h3><p>Async and await keywords are used to write asynchronous code that looks synchronous. They simplify working with promises.</p>',
+                js10: '<h3>JavaScript Lesson 10: JavaScript Best Practices</h3><p>Best practices for writing JavaScript include using strict mode, avoiding global variables, using modular code, and writing clean and readable code.</p>',
+                python1: '<h3>Python Lesson 1: Introduction to Python</h3><p>Python is a high-level, interpreted programming language known for its readability and simplicity. It is widely used in web development, data science, automation, and more.</p>',
+                python2: '<h3>Python Lesson 2: Variables</h3><p>Variables in Python are used to store data. Python uses dynamic typing, meaning you do not need to declare the type of a variable when you create it.</p>',
+                python3: '<h3>Python Lesson 3: Functions</h3><p>Functions in Python are defined using the def keyword, followed by the function name, parameters, and a colon. They are used to encapsulate reusable code.</p>',
+                python4: '<h3>Python Lesson 4: Lists</h3><p>Lists in Python are ordered collections of items that can hold different data types. Lists are created using square brackets and can be manipulated using various methods.</p>',
+                python5: '<h3>Python Lesson 5: Dictionaries</h3><p>Dictionaries in Python are collections of key-value pairs. They are created using curly braces and are useful for storing data that is associated with unique keys.</p>',
+                python6: '<h3>Python Lesson 6: Loops</h3><p>Loops are used to execute a block of code repeatedly. Python has two types of loops: for loops and while loops.</p>',
+                python7: '<h3>Python Lesson 7: Classes</h3><p>Classes are blueprints for creating objects. They encapsulate data and functions that operate on that data. Classes are defined using the class keyword.</p>',
+                python8: '<h3>Python Lesson 8: File Handling</h3><p>File handling in Python involves reading from and writing to files. Python provides built-in functions like open, read, write, and close to work with files.</p>',
+                python9: '<h3>Python Lesson 9: Exception Handling</h3><p>Exception handling in Python is done using try, except, and finally blocks. It allows you to handle errors gracefully and ensure the program continues to run.</p>',
+                python10: '<h3>Python Lesson 10: Python Best Practices</h3><p>Best practices for writing Python code include following the PEP 8 style guide, writing clean and readable code, using virtual environments, and testing your code.</p>',
+                cpp1: '<h3>C++ Lesson 1: Introduction to C++</h3><p>C++ is a powerful, high-performance programming language used for system software, game development, and real-time simulations. It supports object-oriented, procedural, and generic programming.</p>',
+                cpp2: '<h3>C++ Lesson 2: Variables</h3><p>Variables in C++ are used to store data. You must declare the type of a variable before using it. Common types include int, float, double, and char.</p>',
+                cpp3: '<h3>C++ Lesson 3: Functions</h3><p>Functions in C++ are defined using a return type, a function name, and parameters. They are used to encapsulate reusable code. Functions can return values or be void.</p>',
+                cpp4: '<h3>C++ Lesson 4: Control Structures</h3><p>Control structures in C++ include if statements, switch statements, for loops, while loops, and do-while loops. They are used to control the flow of the program.</p>',
+                cpp5: '<h3>C++ Lesson 5: Arrays</h3><p>Arrays in C++ are collections of elements of the same type. They are defined using square brackets and can be of fixed size or dynamic using the vector class.</p>',
+                cpp6: '<h3>C++ Lesson 6: Pointers</h3><p>Pointers are variables that store the memory address of another variable. They are powerful but can be complex and error-prone if not used carefully.</p>',
+                cpp7: '<h3>C++ Lesson 7: Classes and Objects</h3><p>Classes and objects are the fundamental building blocks of object-oriented programming in C++. Classes define the structure and behavior of objects.</p>',
+                cpp8: '<h3>C++ Lesson 8: Inheritance</h3><p>Inheritance allows a class to inherit properties and methods from another class. It promotes code reuse and establishes a relationship between classes.</p>',
+                cpp9: '<h3>C++ Lesson 9: Polymorphism</h3><p>Polymorphism allows functions and methods to operate on objects of different types through a common interface. It is achieved through function overloading and virtual functions.</p>',
+                cpp10: '<h3>C++ Lesson 10: C++ Best Practices</h3><p>Best practices for writing C++ code include following the C++ Core Guidelines, using modern C++ features, avoiding manual memory management, and writing efficient and readable code.</p>',
+            };
+
+            const lessonContentDiv = document.getElementById('lesson-content');
+            lessonContentDiv.innerHTML = lessonContent[lessonId] || '<p>Lesson content not found.</p>';
+            lessonContentDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
